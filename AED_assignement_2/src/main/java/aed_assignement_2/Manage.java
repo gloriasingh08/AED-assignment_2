@@ -30,89 +30,89 @@ public class Manage extends javax.swing.JFrame {
     public Manage() {
         initComponents();
           cars = new ArrayList<CarsInfo>();
-        readUber();
+        //readUber();
     }
-public void readUber()
-{
-        try {
-
-            FileInputStream f = new FileInputStream("uber.dat");
-            ObjectInputStream input = new ObjectInputStream(f);
-
-            boolean endOfFile = false;
-            // setting the end of file to false first, 
-            //because you have start reading
-
-            while (!endOfFile) {
-                try {
-                    cars.add((CarsInfo) input.readObject()); // here reading the object
-
-                } catch (EOFException e) {
-                    endOfFile = true;
-                } catch (Exception n) {
-                    JOptionPane.showMessageDialog(null, n.getMessage());
-                    this.dispose();
-                }
-            }
-            input.close();
-
-        } catch (IOException e) {
-            JOptionPane.showMessageDialog(null, e.getMessage());
-            this.dispose();
-        }
-    
-}
-public void manageTable()
-{
-    try {
-            //JOptionPane.showMessageDialog(null, "hello");
-            FileInputStream f = new FileInputStream("uber.dat");
-            ObjectInputStream input = new ObjectInputStream(f);
-            Vector<CarsInfo> data = new Vector<CarsInfo>();
-            Boolean endOFFile = false;
-            while (endOFFile != true) 
-            {
-                try 
-                {
-                    data.add((CarsInfo) input.readObject());
-                }
-                catch (EOFException eof)
-                {
-                    endOFFile = true;
-                    //JOptionPane.showMessageDialog(null, "The file has reached its end!");
-
-                } 
-                catch (IOException ex)
-                {
-                   JOptionPane.showMessageDialog(null, "input exceptionx");
-                }
-                catch (ClassNotFoundException ex)
-                {
-                   
-                 JOptionPane.showMessageDialog(null, "Class not found exception");
-
-                }
-            }
-
-        
-
-        f.close();
-        input.close();
-        //JOptionPane.showMessageDialog(null, data.size());
-        DefaultTableModel table = (DefaultTableModel) jTable1.getModel();
-        for (int i = 0; i < data.size(); i++) 
-        {
-            CarsInfo row = data.get(i);
-            table.addRow(new Object[]{row.getCompany(), row.getLocation(), row.getManfacturing_year(), row.getSeats(),row.getModel_no(),row.getSerial_no(),row.getService_date(),row.getFleet_catalog(),row.isAvailability()?"Yes":"No"});
-        }
-    }
-    catch(Exception ex)
-    {
-            
-              JOptionPane.showMessageDialog(null, "can not be displayed");  
-
-    }
-}
+//public void readUber()
+//{
+//        try {
+//
+//            FileInputStream f = new FileInputStream("uber.dat");
+//            ObjectInputStream input = new ObjectInputStream(f);
+//
+//            boolean endOfFile = false;
+//            // setting the end of file to false first, 
+//            //because you have start reading
+//
+//            while (!endOfFile) {
+//                try {
+//                    cars.add((CarsInfo) input.readObject()); // here reading the object
+//
+//                } catch (EOFException e) {
+//                    endOfFile = true;
+//                } catch (Exception n) {
+//                    JOptionPane.showMessageDialog(null, n.getMessage());
+//                    this.dispose();
+//                }
+//            }
+//            input.close();
+//
+//        } catch (IOException e) {
+//            JOptionPane.showMessageDialog(null, e.getMessage());
+//            this.dispose();
+//        }
+//    
+//}
+//public void manageTable()
+//{
+//    try {
+//            //JOptionPane.showMessageDialog(null, "hello");
+//            FileInputStream f = new FileInputStream("uber.dat");
+//            ObjectInputStream input = new ObjectInputStream(f);
+//            Vector<CarsInfo> data = new Vector<CarsInfo>();
+//            Boolean endOFFile = false;
+//            while (endOFFile != true) 
+//            {
+//                try 
+//                {
+//                    data.add((CarsInfo) input.readObject());
+//                }
+//                catch (EOFException eof)
+//                {
+//                    endOFFile = true;
+//                    //JOptionPane.showMessageDialog(null, "The file has reached its end!");
+//
+//                } 
+//                catch (IOException ex)
+//                {
+//                   JOptionPane.showMessageDialog(null, "input exceptionx");
+//                }
+//                catch (ClassNotFoundException ex)
+//                {
+//                   
+//                 JOptionPane.showMessageDialog(null, "Class not found exception");
+//
+//                }
+//            }
+//
+//        
+//
+//        f.close();
+//        input.close();
+//        //JOptionPane.showMessageDialog(null, data.size());
+//        DefaultTableModel table = (DefaultTableModel) jTable1.getModel();
+//        for (int i = 0; i < data.size(); i++) 
+//        {
+//            CarsInfo row = data.get(i);
+//            table.addRow(new Object[]{row.getCompany(), row.getLocation(), row.getManfacturing_year(), row.getSeats(),row.getModel_no(),row.getSerial_no(),row.getService_date(),row.getFleet_catalog(),row.isAvailability()?"Yes":"No"});
+//        }
+//    }
+//    catch(Exception ex)
+//    {
+//            
+//              JOptionPane.showMessageDialog(null, "can not be displayed");  
+//
+//    }
+//}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -132,15 +132,12 @@ public void manageTable()
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem11 = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu6 = new javax.swing.JMenu();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem12 = new javax.swing.JMenuItem();
         jMenu8 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
@@ -149,6 +146,8 @@ public void manageTable()
         jMenuItem8 = new javax.swing.JMenuItem();
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenuItem10 = new javax.swing.JMenuItem();
+        jMenuItem14 = new javax.swing.JMenuItem();
+        jMenuItem12 = new javax.swing.JMenuItem();
         jMenu9 = new javax.swing.JMenu();
         jMenuItem13 = new javax.swing.JMenuItem();
 
@@ -172,47 +171,21 @@ public void manageTable()
 
         jPanel1.setBackground(new java.awt.Color(255, 204, 204));
 
-        jTable1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Company", "Location", "manufacturing year", "seats in car", "Model No", "Serial No", "Last service date", "last fleet catalog", "availability"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, true, false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane1.setViewportView(jTable1);
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 691, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(703, 703, 703)
                 .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(123, 123, 123)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addGap(123, 123, 123)
+                .addComponent(jLabel1)
+                .addContainerGap(312, Short.MAX_VALUE))
         );
 
         jMenuBar1.setBackground(new java.awt.Color(255, 204, 255));
@@ -228,15 +201,17 @@ public void manageTable()
         });
         jMenu1.add(jMenuItem1);
 
-        jMenuItem2.setText("Edit");
+        jMenuItem2.setText("Update");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem2);
-
-        jMenuItem12.setText("Delete");
-        jMenu1.add(jMenuItem12);
 
         jMenuBar1.add(jMenu1);
 
-        jMenu8.setText("Search By");
+        jMenu8.setText("Search all the cars by");
 
         jMenuItem3.setText("Cars brand");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
@@ -294,6 +269,22 @@ public void manageTable()
         });
         jMenu8.add(jMenuItem10);
 
+        jMenuItem14.setText("expired maintenance certificates");
+        jMenuItem14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem14ActionPerformed(evt);
+            }
+        });
+        jMenu8.add(jMenuItem14);
+
+        jMenuItem12.setText("Location");
+        jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem12ActionPerformed(evt);
+            }
+        });
+        jMenu8.add(jMenuItem12);
+
         jMenuBar1.add(jMenu8);
 
         jMenu9.setText("Close");
@@ -332,7 +323,7 @@ public void manageTable()
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         
-        manageTable();
+        new ManageDisplay().setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
@@ -368,6 +359,18 @@ public void manageTable()
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
        new CarUberComp().setVisible(true);
     }//GEN-LAST:event_jMenuItem9ActionPerformed
+
+    private void jMenuItem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem14ActionPerformed
+        new MaintenanceCert().setVisible(true);
+    }//GEN-LAST:event_jMenuItem14ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+       new EditUber().setVisible(true);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
+        new SearchByLocation().setVisible(true);
+    }//GEN-LAST:event_jMenuItem12ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -422,6 +425,7 @@ public void manageTable()
     private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem13;
+    private javax.swing.JMenuItem jMenuItem14;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
@@ -431,8 +435,6 @@ public void manageTable()
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

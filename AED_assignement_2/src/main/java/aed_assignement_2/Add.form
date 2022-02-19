@@ -171,12 +171,12 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel2">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Location*"/>
+                <Property name="text" type="java.lang.String" value="Location"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel3">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Year of Manufacture*"/>
+                <Property name="text" type="java.lang.String" value="Year of Manufacture"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel4">

@@ -8,10 +8,14 @@ import java.io.EOFException;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.text.DateFormatter;
 
 /**
  *
@@ -97,11 +101,15 @@ public class SearchByFleet extends javax.swing.JFrame {
         input.close();
         //JOptionPane.showMessageDialog(null, data.size());
         DefaultTableModel table = (DefaultTableModel) jTable1.getModel();
+        table.setRowCount(0);
         for (int i = 0; i < data.size(); i++) 
         {
             CarsInfo row = data.get(i);
-            Date d=new Date(row.getFleet_catalog());
-                     table.addRow(new Object[]{row.getCompany(), row.getLocation(),row.getSerial_no(),row.getService_date(),row.getFleet_catalog(),row.isAvailability()?"Yes":"No"});
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMM dd, yyyy hh:mm:ss");
+            Date d = new Date(row.getFleet_catalog());
+            String dateToDisplay = simpleDateFormat.format(d);
+            
+                     table.addRow(new Object[]{row.getCompany(), row.getLocation(),row.getSerial_no(),row.getService_date(),dateToDisplay,row.isAvailability()?"Yes":"No"});
         }
     }
     catch(Exception ex)
@@ -221,8 +229,7 @@ public class SearchByFleet extends javax.swing.JFrame {
         
              manageTable();
        
-       
-
+      
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

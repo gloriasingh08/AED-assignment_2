@@ -29,6 +29,7 @@ public class Add extends javax.swing.JFrame {
     
     ArrayList<CarsInfo> cars;
     
+    
     public Add() {
         initComponents();
         cars= new ArrayList<CarsInfo>();
@@ -148,9 +149,9 @@ public class Add extends javax.swing.JFrame {
 
         jLabel1.setText("Company");
 
-        jLabel2.setText("Location*");
+        jLabel2.setText("Location");
 
-        jLabel3.setText("Year of Manufacture*");
+        jLabel3.setText("Year of Manufacture");
 
         jLabel4.setText("Number of seats in the car");
 
@@ -313,7 +314,7 @@ public class Add extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         
-        if (jTextField1.getText().isEmpty()||jTextField2.getText().isEmpty()||jTextField4.getText().isEmpty()||jTextField5.getText().isEmpty()||(jCheckBox1.getText().isEmpty()||jCheckBox2.getText().isEmpty()))
+        if (jTextField1.getText().isEmpty()||jTextField2.getText().isEmpty()||jTextField4.getText().isEmpty()||jTextField5.getText().isEmpty()||(jCheckBox1.getText().isEmpty()||jCheckBox2.getText().isEmpty())||jTextField8.getText().isEmpty())
         {
             JOptionPane.showMessageDialog(null, "Please enter all the details");
             return;
@@ -321,6 +322,26 @@ public class Add extends javax.swing.JFrame {
         else
         
         {
+            try{
+                int seats= Integer.parseInt(jTextField4.getText().trim());
+                int serialN=Integer.parseInt(jTextField8.getText().trim());
+                
+                
+            }
+            catch(Exception e){
+                JOptionPane.showMessageDialog(null, "please enter deatils in Number format");
+                return;
+            }
+            for(int i=0;i<cars.size();i++)
+            {
+                 
+                if(Integer.parseInt(jTextField8.getText().trim()) == cars.get(i).getSerial_no())
+                {
+                    JOptionPane.showMessageDialog(null, "please enter a new serial number");
+                    return;
+                }
+            }
+           
             
 //            if(jTextField3.getText().trim().length()>4||jTextField3.getText().trim().length()<4)
 //            {
@@ -361,7 +382,7 @@ public class Add extends javax.swing.JFrame {
                 carAvail=false;
             }
             Date lastService=(jDateChooser1.getDate());
-            Long lastFleet=System.currentTimeMillis();
+            Long lastFleet= System.currentTimeMillis();
             
                     
             

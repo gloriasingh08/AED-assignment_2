@@ -53,7 +53,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jScrollPane1" pref="781" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" pref="812" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
@@ -94,14 +94,63 @@
                   <Table columnCount="9" rowCount="0">
                     <Column editable="false" title="Company" type="java.lang.Object"/>
                     <Column editable="false" title="Location" type="java.lang.Object"/>
-                    <Column editable="false" title="manufacturing year" type="java.lang.Object"/>
-                    <Column editable="false" title="seats in car" type="java.lang.Object"/>
+                    <Column editable="false" title="MFG year" type="java.lang.Object"/>
+                    <Column editable="false" title="Seats in car" type="java.lang.Object"/>
                     <Column editable="false" title="Model No" type="java.lang.Object"/>
                     <Column editable="false" title="Serial No" type="java.lang.Object"/>
-                    <Column editable="true" title="Last service date" type="java.lang.Object"/>
-                    <Column editable="false" title="last fleet catalog" type="java.lang.Object"/>
-                    <Column editable="true" title="availability" type="java.lang.Object"/>
+                    <Column editable="false" title="Last service date" type="java.lang.Object"/>
+                    <Column editable="false" title="Last fleet catalog" type="java.lang.Object"/>
+                    <Column editable="false" title="Availability" type="java.lang.Object"/>
                   </Table>
+                </Property>
+                <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                  <TableColumnModel selectionModel="0">
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                  </TableColumnModel>
                 </Property>
                 <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>

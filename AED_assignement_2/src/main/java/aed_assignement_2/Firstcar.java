@@ -8,7 +8,9 @@ import java.io.EOFException;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -20,7 +22,7 @@ import javax.swing.table.DefaultTableModel;
 public class Firstcar extends javax.swing.JFrame {
 
     /**
-     * Creates new form Firstcar
+     * Creates new form First car
      */
     
      DefaultTableModel model;
@@ -103,11 +105,18 @@ public class Firstcar extends javax.swing.JFrame {
         input.close();
         //JOptionPane.showMessageDialog(null, data.size());
         DefaultTableModel table = (DefaultTableModel) jTable1.getModel();
+        table.setRowCount(0);
         for (int i = 0; i < data.size(); i++) 
         {
             CarsInfo row = data.get(i);
+              SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMM dd, yyyy hh:mm:ss");
+            Date d = new Date(row.getFleet_catalog());
+            String dateToDisplay = simpleDateFormat.format(d);
             if(row.isAvailability()==true&&(row.getLocation().equalsIgnoreCase("Boston")))
-                     table.addRow(new Object[]{row.getCompany(), row.getLocation(), row.getManfacturing_year(), row.getSeats(),row.getModel_no(),row.getSerial_no(),row.getService_date(),row.getFleet_catalog(),row.isAvailability()?"Yes":"No"});
+            {
+               table.addRow(new Object[]{row.getCompany(), row.getLocation(), row.getManfacturing_year(), row.getSeats(),row.getModel_no(),row.getSerial_no(),row.getService_date(),dateToDisplay,row.isAvailability()?"Yes":"No"});
+               return;
+            }
            
         }
     }
@@ -142,11 +151,11 @@ public class Firstcar extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Company", "Location", "manufacturing year", "seats in car", "Model No", "Serial No", "Last service date", "last fleet catalog", "availability"
+                "Company", "Location", "MFG year", "Seats in car", "Model No", "Serial No", "Last service date", "Last fleet catalog", "Availability"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, true, false, true
+                false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -168,7 +177,7 @@ public class Firstcar extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 781, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 812, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(327, 327, 327)
