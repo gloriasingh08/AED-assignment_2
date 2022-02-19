@@ -114,7 +114,7 @@ public class MaintenanceCert extends javax.swing.JFrame {
             Calendar c= Calendar.getInstance();
             c.set(Calendar.MONTH,11);
             c.set(Calendar.DATE, 20);
-            c.set(Calendar.YEAR,2019);
+            c.set(Calendar.YEAR,2019); // have set the standard date for last maintenance is 11/20/2019
             Date one=c.getTime();
              SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMM dd, yyyy hh:mm:ss");
             Date d = new Date(row.getFleet_catalog());
@@ -188,7 +188,7 @@ public class MaintenanceCert extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 813, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
