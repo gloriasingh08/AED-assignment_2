@@ -121,7 +121,7 @@ public class MaintenanceCert extends javax.swing.JFrame {
             String dateToDisplay = simpleDateFormat.format(d);
                     
             if(row.getService_date().before(one))
-                     table.addRow(new Object[]{row.getCompany(), row.getLocation(), row.getManfacturing_year(), row.getSeats(),row.getModel_no(),row.getSerial_no(),dateToDisplay,row.isAvailability()?"Yes":"No"});
+                     table.addRow(new Object[]{row.getCompany(), row.getLocation(), row.getManfacturing_year(), row.getSeats(),row.getModel_no(),row.getSerial_no(),row.getService_date(),row.isAvailability()?"Yes":"No"});
            
         }
     }
